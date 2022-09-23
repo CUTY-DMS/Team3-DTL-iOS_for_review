@@ -33,7 +33,6 @@ class ReviseVC: UIViewController {
             
             btnStateCheck.setImage(successImage, for: .normal)
         }
-        
     }
     
     
@@ -160,6 +159,4 @@ class ReviseVC: UIViewController {
             }
         }
     }
-    
-    
 }

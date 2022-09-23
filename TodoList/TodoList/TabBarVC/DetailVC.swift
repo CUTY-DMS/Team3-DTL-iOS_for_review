@@ -47,6 +47,10 @@ class DetailVC: UIViewController {
             successState()
         }
         
+        else if(successResult == false) {
+            failState()
+        }
+        
     }
     
     
@@ -117,16 +121,23 @@ class DetailVC: UIViewController {
         getHeartsInfo()
         
         print(likeResult)
-        
     }
     
     
     
     func successState() {
-        btnSuccess.titleLabel?.textColor = UIColor(named: "MainColor")
+        btnSuccess.tintColor = UIColor(named: "MainColor")
         
         let todoState = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular, scale: .default)
         let successImage = UIImage(systemName: "checkmark.square.fill", withConfiguration: todoState)
+        btnSuccess.setImage(successImage, for: .normal)
+    }
+    
+    func failState() {
+        btnSuccess.tintColor = UIColor(named: "MainColor")
+        
+        let todoState = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular, scale: .default)
+        let successImage = UIImage(systemName: "square", withConfiguration: todoState)
         btnSuccess.setImage(successImage, for: .normal)
     }
     
@@ -136,7 +147,7 @@ class DetailVC: UIViewController {
             pointSize: 20, weight: .regular, scale: .default)
         let image = UIImage(systemName: "heart.fill", withConfiguration: config)
         likeBtn.setImage(image, for: .normal)
-
+        
     }
     
     func likedFalse() {
